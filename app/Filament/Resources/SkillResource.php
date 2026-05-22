@@ -24,8 +24,6 @@ class SkillResource extends Resource
             Forms\Components\Select::make('category')
                 ->options(['development' => 'Development', 'engineering' => 'Engineering'])
                 ->required(),
-            Forms\Components\TextInput::make('proficiency')
-                ->numeric()->minValue(0)->maxValue(100)->default(80)->required(),
             Forms\Components\ColorPicker::make('color')->default('#3b82f6'),
             Forms\Components\TextInput::make('icon')->maxLength(50)->placeholder('e.g. laravel, php'),
             Forms\Components\TextInput::make('sort_order')->numeric()->default(0),
@@ -41,7 +39,6 @@ class SkillResource extends Resource
                 Tables\Columns\TextColumn::make('name')->searchable()->sortable(),
                 Tables\Columns\BadgeColumn::make('category')
                     ->colors(['primary' => 'development', 'success' => 'engineering']),
-                Tables\Columns\TextColumn::make('proficiency')->suffix('%')->sortable(),
                 Tables\Columns\IconColumn::make('is_active')->boolean(),
                 Tables\Columns\TextColumn::make('sort_order')->sortable(),
             ])

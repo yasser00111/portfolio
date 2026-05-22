@@ -26,7 +26,7 @@
 
                 <div class="space-y-5">
                     @foreach([
-                        ['icon' => 'mail',          'label' => 'Email',     'value' => $settings['owner_email'] ?? 'yasser@yasser.dev', 'href' => 'mailto:'.($settings['owner_email'] ?? 'yasser@yasser.dev'), 'color' => 'text-blue-400 bg-blue-500/10'],
+                        ['icon' => 'mail',          'label' => 'Email',     'value' => $settings['owner_email'] ?? 'yassertkj@gmail.com', 'href' => 'mailto:'.($settings['owner_email'] ?? 'yassertkj@gmail.com'), 'color' => 'text-blue-400 bg-blue-500/10'],
                         ['icon' => 'message-circle','label' => 'WhatsApp',  'value' => 'Chat via WhatsApp',                             'href' => 'https://wa.me/'.($settings['whatsapp_number'] ?? ''), 'color' => 'text-emerald-400 bg-emerald-500/10'],
                         ['icon' => 'github',        'label' => 'GitHub',    'value' => 'github.com/yasser00111',                        'href' => $settings['github_url'] ?? '#', 'color' => 'text-gray-300 bg-gray-500/10'],
                         ['icon' => 'linkedin',      'label' => 'LinkedIn',  'value' => 'linkedin.com/in/muhammad-yasser',               'href' => $settings['linkedin_url'] ?? '#', 'color' => 'text-blue-400 bg-blue-500/10'],

@@ -20,87 +20,67 @@
             </p>
         </div>
 
-        {{-- Two columns --}}
-        <div class="grid lg:grid-cols-2 gap-10">
-
-            {{-- Development Skills --}}
-            <div data-aos="fade-right">
-                <div class="glass-card p-8 rounded-3xl h-full">
-                    <div class="flex items-center gap-3 mb-8">
-                        <div class="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center">
-                            <i data-lucide="code-2" class="w-5 h-5 text-blue-400"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-white font-bold text-lg">Development Skills</h3>
-                            <p class="text-gray-500 text-sm">Web & Backend Technologies</p>
-                        </div>
-                    </div>
-
-                    <div class="space-y-5">
-                        @foreach($devSkills as $skill)
-                        <div data-aos="fade-up" data-aos-delay="{{ $loop->index * 50 }}">
-                            <div class="flex items-center justify-between mb-2">
-                                <div class="flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full" style="background:{{ $skill->color }};box-shadow:0 0 6px {{ $skill->color }};"></span>
-                                    <span class="text-gray-300 text-sm font-medium">{{ $skill->name }}</span>
-                                </div>
-                                <span class="text-primary-400 text-xs font-bold font-mono">{{ $skill->proficiency }}%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-bar-fill w-0"
-                                     data-skill="{{ $skill->proficiency }}"
-                                     style="background:linear-gradient(90deg,{{ $skill->color }},#00d4ff);"></div>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
+        {{-- Development Skills --}}
+        <div class="mb-10" data-aos="fade-up">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-9 h-9 rounded-xl bg-blue-500/20 flex items-center justify-center">
+                    <i data-lucide="code-2" class="w-4 h-4 text-blue-400"></i>
                 </div>
+                <h3 class="text-white font-bold text-lg">Development Skills</h3>
+                <div class="flex-1 h-px bg-white/5"></div>
             </div>
 
-            {{-- Engineering Skills --}}
-            <div data-aos="fade-left">
-                <div class="glass-card p-8 rounded-3xl h-full">
-                    <div class="flex items-center gap-3 mb-8">
-                        <div class="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center">
-                            <i data-lucide="network" class="w-5 h-5 text-cyan-400"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-white font-bold text-lg">Engineering Skills</h3>
-                            <p class="text-gray-500 text-sm">Network & Infrastructure</p>
-                        </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                @foreach($devSkills as $skill)
+                <div class="glass-card-hover p-4 rounded-2xl flex flex-col items-center gap-3 text-center"
+                     data-aos="zoom-in"
+                     data-aos-delay="{{ $loop->index * 40 }}">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center"
+                         style="background:{{ $skill->color }}18; border:1px solid {{ $skill->color }}30;">
+                        <span class="w-3 h-3 rounded-full"
+                              style="background:{{ $skill->color }}; box-shadow:0 0 8px {{ $skill->color }};"></span>
                     </div>
-
-                    <div class="space-y-5">
-                        @foreach($engSkills as $skill)
-                        <div data-aos="fade-up" data-aos-delay="{{ $loop->index * 50 }}">
-                            <div class="flex items-center justify-between mb-2">
-                                <div class="flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full" style="background:{{ $skill->color }};box-shadow:0 0 6px {{ $skill->color }};"></span>
-                                    <span class="text-gray-300 text-sm font-medium">{{ $skill->name }}</span>
-                                </div>
-                                <span class="text-cyan-400 text-xs font-bold font-mono">{{ $skill->proficiency }}%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-bar-fill w-0"
-                                     data-skill="{{ $skill->proficiency }}"
-                                     style="background:linear-gradient(90deg,{{ $skill->color }},#00ffff);"></div>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
+                    <span class="text-gray-200 text-sm font-medium leading-tight">{{ $skill->name }}</span>
                 </div>
+                @endforeach
             </div>
         </div>
 
-        {{-- Skill grid badges --}}
-        <div class="mt-16 glass-card p-8 rounded-3xl" data-aos="fade-up">
+        {{-- Engineering Skills --}}
+        <div class="mb-16" data-aos="fade-up">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-9 h-9 rounded-xl bg-cyan-500/20 flex items-center justify-center">
+                    <i data-lucide="wifi" class="w-4 h-4 text-cyan-400"></i>
+                </div>
+                <h3 class="text-white font-bold text-lg">Engineering Skills</h3>
+                <div class="flex-1 h-px bg-white/5"></div>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                @foreach($engSkills as $skill)
+                <div class="glass-card-hover p-4 rounded-2xl flex flex-col items-center gap-3 text-center"
+                     data-aos="zoom-in"
+                     data-aos-delay="{{ $loop->index * 40 }}">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center"
+                         style="background:{{ $skill->color }}18; border:1px solid {{ $skill->color }}30;">
+                        <span class="w-3 h-3 rounded-full"
+                              style="background:{{ $skill->color }}; box-shadow:0 0 8px {{ $skill->color }};"></span>
+                    </div>
+                    <span class="text-gray-200 text-sm font-medium leading-tight">{{ $skill->name }}</span>
+                </div>
+                @endforeach
+            </div>
+        </div>
+
+        {{-- Tools & Technologies --}}
+        <div class="glass-card p-8 rounded-3xl" data-aos="fade-up">
             <h3 class="text-center text-white font-bold text-lg mb-8">Tools & Technologies</h3>
             <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
                 @foreach([
                     ['Laravel',    '#FF2D20', 'L'],
                     ['PHP',        '#777BB4', 'P'],
                     ['MySQL',      '#4479A1', 'M'],
-                    ['JS',         '#F7DF1E', 'J'],
+                    ['JavaScript', '#F7DF1E', 'J'],
                     ['Tailwind',   '#06B6D4', 'T'],
                     ['Vue.js',     '#4FC08D', 'V'],
                     ['Git',        '#F05032', 'G'],
@@ -115,14 +95,18 @@
                     ['Docker',     '#2496ED', 'D'],
                 ] as [$name, $color, $letter])
                 <div class="flex flex-col items-center gap-2 group cursor-default">
-                    <div class="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-neon"
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-sm
+                                transition-all duration-300 group-hover:scale-110 group-hover:shadow-neon"
                          style="background:{{ $color }}20; border:1px solid {{ $color }}30; color:{{ $color }};">
                         {{ $letter }}
                     </div>
-                    <span class="text-gray-500 text-xs text-center group-hover:text-gray-300 transition-colors">{{ $name }}</span>
+                    <span class="text-gray-500 text-xs text-center group-hover:text-gray-300 transition-colors">
+                        {{ $name }}
+                    </span>
                 </div>
                 @endforeach
             </div>
         </div>
+
     </div>
 </section>
